@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "kghbot-37e3"
+    labels:
+        app: "kghbot-37e3"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: kghbotbaff-kghbot-37e3.a2c84b9369eb49fea1f0.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "kghbot-37e3"
+                servicePort: 80
